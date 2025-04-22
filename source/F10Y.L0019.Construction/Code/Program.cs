@@ -1,13 +1,19 @@
 using System;
+using System.Threading.Tasks;
 
 
 namespace F10Y.L0019.Construction
 {
     class Program
     {
-        static void Main()
+        static async Task Main()
         {
-            Console.WriteLine("Hello World!");
+            await Program.Demonstrations_();
+        }
+
+        static async Task Demonstrations_()
+        {
+            await NotepadPlusPlusDemonstrations.Instance.Open_File();
         }
     }
 }
