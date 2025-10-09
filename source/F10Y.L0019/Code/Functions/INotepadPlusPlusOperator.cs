@@ -97,7 +97,7 @@ namespace F10Y.L0019
                 enquotedFilePath);
         }
 
-        public void Open(IEnumerable<string> filePaths)
+        void Open(IEnumerable<string> filePaths)
         {
             foreach (var filePath in filePaths)
             {
@@ -105,7 +105,7 @@ namespace F10Y.L0019
             }
         }
 
-        public void Open(params string[] filePaths)
+        void Open(params string[] filePaths)
             => this.Open(filePaths.AsEnumerable());
     }
 }
