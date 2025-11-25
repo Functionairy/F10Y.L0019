@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-
+using System.Threading.Tasks;
 using F10Y.T0002;
 
 
@@ -107,5 +107,16 @@ namespace F10Y.L0019
 
         void Open(params string[] filePaths)
             => this.Open(filePaths.AsEnumerable());
+
+        async Task Write_Lines_AndOpen(
+            string textFilePath,
+            IEnumerable<string> lines)
+        {
+            await Instances.FileOperator.Write_Lines(
+                textFilePath,
+                lines);
+
+            this.Open(textFilePath);
+        }
     }
 }
